@@ -3,22 +3,12 @@
 </div>
 
 <div aling="center">
-<!-- Flutter -->
+
 [![Flutter](https://img.shields.io/badge/Flutter-v3.22-02569B?style=flat&logo=flutter&logoColor=white)](https://flutter.dev)
-
-<!-- Dart -->
 [![Dart](https://img.shields.io/badge/Dart-v3.4-0175C2?style=flat&logo=dart&logoColor=white)](https://dart.dev)
-
-<!-- Firebase -->
 [![Firebase](https://img.shields.io/badge/Firebase-v13.0-FFCA28?style=flat&logo=firebase&logoColor=black)](https://firebase.google.com)
-
-<!-- TensorFlow Lite -->
 [![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-v2.16-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/lite)
-
-<!-- SQLite -->
 [![SQLite](https://img.shields.io/badge/SQLite-v3.45-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org)
-
-<!-- Google Sign-In -->
 [![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-v20.7-4285F4?style=flat&logo=google&logoColor=white)](https://developers.google.com/identity)
 </div>
 # NeuralMedics
