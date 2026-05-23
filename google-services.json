@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "881972389573",
+    "project_id": "neuralmedicsmobileapp",
+    "storage_bucket": "neuralmedicsmobileapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881972389573:android:23e418fd849115364d72ac",
+        "android_client_info": {
+          "package_name": "com.example.neuralmedicsmobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881972389573-0ns93op6k380ns7ekq38uqao4t72d1bu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.neuralmedicsmobileapp",
+            "certificate_hash": "9034efddf39a3293c07bf5a998cf4a96245049e3"
+          }
+        },
+        {
+          "client_id": "881972389573-cvt79k6g2roikrn9801jl13dop4ea32o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxWbj7eJE36uSYgnYx7BSAIeCindkA02I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881972389573-cvt79k6g2roikrn9801jl13dop4ea32o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "881972389573-ioe48s7vrckk3fgbtd8tk663qkkaonq7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.neuralmedicsmobileapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+# TensorFlow 2.14 ile eğitilen model için (Colab / local venv):
+# python -m venv .venv-convert
+# .venv-convert\Scripts\activate
+# pip install -r scripts/requirements-convert.txt
+tensorflow==2.14.0
+segmentation-models==1.0.1
+h5py

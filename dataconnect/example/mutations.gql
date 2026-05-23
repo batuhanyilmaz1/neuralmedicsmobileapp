@@ -1,0 +1,9 @@
+mutation UpsertUser($email: String!, $displayName: String) @auth(level: USER) {
+  user_upsert(
+    data: {
+      uid_expr: "auth.uid"
+      email: $email
+      displayName: $displayName
+    }
+  )
+}

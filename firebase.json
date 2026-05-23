@@ -1,0 +1,35 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "NeuralMedics",
+        "supportEmail": "neuralmedicsmobileapp@gmail.com"
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "neuralmedicsmobileapp",
+          "appId": "1:881972389573:android:23e418fd849115364d72ac",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "neuralmedicsmobileapp",
+          "configurations": {
+            "android": "1:881972389573:android:23e418fd849115364d72ac",
+            "ios": "1:881972389573:ios:885d698b03f3f5a84d72ac",
+            "web": "1:881972389573:web:cf0537aa37acb5254d72ac"
+          }
+        }
+      }
+    }
+  }
+}

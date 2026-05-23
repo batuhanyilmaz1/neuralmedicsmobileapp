@@ -1,0 +1,8 @@
+query GetMe @auth(level: USER) {
+  user(key: { uid_expr: "auth.uid" }) {
+    uid
+    email
+    displayName
+    createdAt
+  }
+}

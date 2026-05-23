@@ -1,0 +1,9 @@
+kagglehub
+segmentation-models
+opencv-python
+numpy==1.26.4
+tensorflow==2.16.1
+matplotlib 
+seaborn
+scikit-learn
+pandas

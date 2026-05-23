@@ -1,0 +1,42 @@
+name: neuralmedicsmobileapp
+description: "NeuralMedics - AI-powered brain tumor detection medical app."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  go_router: ^14.6.2
+  google_fonts: ^6.2.1
+  image_picker: ^1.1.2
+  tflite_flutter: ^0.12.1
+  image: ^4.3.0
+  http: ^1.2.2
+  intl: ^0.20.1
+  shared_preferences: ^2.3.4
+  flutter_svg: ^2.0.16
+  firebase_core: ^4.9.0
+  firebase_auth: ^6.5.1
+  google_sign_in: ^7.2.0
+  cloud_firestore: ^6.1.3
+  sqflite: ^2.4.2
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  sqflite_common_ffi: ^2.3.5
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/ai/

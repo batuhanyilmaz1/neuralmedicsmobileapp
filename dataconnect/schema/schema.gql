@@ -1,0 +1,7 @@
+# NeuralMedics user profiles (linked to Firebase Auth uid)
+type User @table(key: "uid") {
+  uid: String! @default(expr: "auth.uid")
+  email: String! @unique
+  displayName: String @col(dataType: "varchar(120)")
+  createdAt: Timestamp! @default(expr: "request.time")
+}

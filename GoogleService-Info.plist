@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>881972389573-ioe48s7vrckk3fgbtd8tk663qkkaonq7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.881972389573-ioe48s7vrckk3fgbtd8tk663qkkaonq7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>881972389573-0ns93op6k380ns7ekq38uqao4t72d1bu.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBUE8JoLBjKw1n8EzbyK0DZy9JKC1SkaOk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>881972389573</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.neuralmedicsmobileapp</string>
+	<key>PROJECT_ID</key>
+	<string>neuralmedicsmobileapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>neuralmedicsmobileapp.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:881972389573:ios:885d698b03f3f5a84d72ac</string>
+</dict>
+</plist>
