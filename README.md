@@ -1,9 +1,6 @@
 <div align="center">
   <img src="icon.png" alt="NeuralMedics" width="200" height="200">
 </div>
-
-# NeuralMedics
-
 <div align="center">
 
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
@@ -14,6 +11,7 @@
 [![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/identity)
 
 </div>
+# NeuralMedics
 
 Flutter ile geliştirilmiş, yapay zeka destekli beyin MR tümör sınıflandırma uygulaması.  
 Firebase Auth + Firestore, yerel SQLite geçmişi ve TFLite on-device inference kullanır.
