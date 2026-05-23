@@ -11,6 +11,9 @@
 [![SQLite](https://img.shields.io/badge/SQLite-v3.45-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org)
 [![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-v20.7-4285F4?style=flat&logo=google&logoColor=white)](https://developers.google.com/identity)
 </div>
+
+<div align="center">
+  
 # NeuralMedics
 
 Flutter ile geliştirilmiş, yapay zeka destekli beyin MR tümör sınıflandırma uygulaması.  
@@ -18,7 +21,7 @@ Firebase Auth + Firestore, yerel SQLite geçmişi ve TFLite on-device inference 
 
 **Firebase projesi:** `neuralmedicsmobileapp`  
 **Dil:** Türkçe arayüz  
-
+</div>
 ---
 
 ## Ekran görüntüleri
