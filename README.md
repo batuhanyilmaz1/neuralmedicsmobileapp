@@ -2,7 +2,7 @@
   <img src="icon.png" alt="NeuralMedics" width="200" height="200">
 </div>
 
-<div aling="center">
+<div align="center">
 
 [![Flutter](https://img.shields.io/badge/Flutter-v3.22-02569B?style=flat&logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-v3.4-0175C2?style=flat&logo=dart&logoColor=white)](https://dart.dev)
