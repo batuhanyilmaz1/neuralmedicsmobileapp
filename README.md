@@ -5,7 +5,6 @@ Firebase Auth + Firestore, yerel SQLite geçmişi ve TFLite on-device inference 
 
 **Firebase projesi:** `neuralmedicsmobileapp`  
 **Dil:** Türkçe arayüz  
-**Repo:** https://github.com/batuhanyilmaz1/neuralmedicsmobileapp
 
 ---
 
