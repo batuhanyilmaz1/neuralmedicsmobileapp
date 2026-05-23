@@ -4,7 +4,20 @@ Flutter ile geliştirilmiş, yapay zeka destekli beyin MR tümör sınıflandır
 Firebase Auth + Firestore, yerel SQLite geçmişi ve TFLite on-device inference kullanır.
 
 **Firebase projesi:** `neuralmedicsmobileapp`  
-**Dil:** Türkçe arayüz
+**Dil:** Türkçe arayüz  
+**Repo:** https://github.com/batuhanyilmaz1/neuralmedicsmobileapp
+
+---
+
+## Ekran görüntüleri
+
+| Ana Sayfa | AI Tarama |
+|:---:|:---:|
+| ![Ana Sayfa](docs/screenshots/home.png) | ![AI Tarama](docs/screenshots/ai-scan.png) |
+
+| Sağlık Makaleleri | Profil |
+|:---:|:---:|
+| ![Makaleler](docs/screenshots/articles.png) | ![Profil](docs/screenshots/profile.png) |
 
 ---
 
@@ -149,7 +162,7 @@ GitHub’da repo oluştururken **Git LFS**’in açık olduğundan emin ol (vars
 ### Clone (başka makinede)
 
 ```powershell
-git clone https://github.com/<kullanici>/<repo>.git
+git clone https://github.com/batuhanyilmaz1/neuralmedicsmobileapp.git
 cd neuralmedicsmobileapp
 git lfs pull
 flutter pub get

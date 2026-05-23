@@ -14,7 +14,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  static const _expandedHeight = 292.0;
+  static const _expandedHeight = 318.0;
 
   static const _menu = <_MenuItem>[
     _MenuItem(Icons.monitor_heart_outlined, 'Sağlık Profilim', AppRoutes.healthProfile),
@@ -249,7 +249,6 @@ class _ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fade = expandRatio.clamp(0.0, 1.0);
-    final topPadding = MediaQuery.paddingOf(context).top;
 
     return DecoratedBox(
       decoration: const BoxDecoration(gradient: AppColors.profileGradient),
@@ -260,44 +259,45 @@ class _ProfileHeader extends StatelessWidget {
           child: Transform.translate(
             offset: Offset(0, (1 - fade) * 24),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, topPadding + 8, 20, 28),
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    width: 96,
-                    height: 96,
+                    width: 84,
+                    height: 84,
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.2),
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 3),
                     ),
-                    child: const Icon(Icons.person, size: 52, color: Colors.white),
+                    child: const Icon(Icons.person, size: 46, color: Colors.white),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   Text(
                     displayName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 21,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                   if (email.isNotEmpty) ...[
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 2),
                     Text(
                       email,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: Colors.white.withValues(alpha: 0.85),
-                        fontSize: 13,
+                        fontSize: 12,
                       ),
                     ),
                   ],
-                  const SizedBox(height: 18),
+                  const SizedBox(height: 14),
                   Row(
                     children: [
                       Expanded(
@@ -438,14 +438,15 @@ class _Stat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, color: Colors.white, size: 24),
-        const SizedBox(height: 8),
+        Icon(icon, color: Colors.white, size: 22),
+        const SizedBox(height: 6),
         Text(
           label,
           style: TextStyle(
             color: Colors.white.withValues(alpha: 0.8),
-            fontSize: 12,
+            fontSize: 11,
           ),
         ),
         const SizedBox(height: 2),
@@ -455,7 +456,7 @@ class _Stat extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: FontWeight.w800,
           ),
         ),
