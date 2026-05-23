@@ -1,16 +1,29 @@
 <div align="center">
   <img src="icon.png" alt="NeuralMedics" width="200" height="200">
 </div>
+
 <div align="center">
 
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com)
-[![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/lite)
-[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org)
-[![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/identity)
+<!-- Flutter -->
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)](https://flutter.dev) [![Version](https://img.shields.io/badge/v3.22-grey?style=flat-square)](https://flutter.dev)
+
+<!-- Dart -->
+[![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)](https://dart.dev) [![Version](https://img.shields.io/badge/v3.4-grey?style=flat-square)](https://dart.dev)
+
+<!-- Firebase -->
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)](https://firebase.google.com) [![Version](https://img.shields.io/badge/v13.0-grey?style=flat-square)](https://firebase.google.com)
+
+<!-- TensorFlow Lite -->
+[![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/lite) [![Version](https://img.shields.io/badge/v2.16-grey?style=flat-square)](https://www.tensorflow.org/lite)
+
+<!-- SQLite -->
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org) [![Version](https://img.shields.io/badge/v3.45-grey?style=flat-square)](https://www.sqlite.org)
+
+<!-- Google Sign-In -->
+[![Google Sign-In](https://img.shields.io/badge/Google%20Sign--In-4285F4?style=flat&logo=google&logoColor=white)](https://developers.google.com/identity) [![Version](https://img.shields.io/badge/v20.7-grey?style=flat-square)](https://developers.google.com/identity)
 
 </div>
+
 # NeuralMedics
 
 Flutter ile geliştirilmiş, yapay zeka destekli beyin MR tümör sınıflandırma uygulaması.  
