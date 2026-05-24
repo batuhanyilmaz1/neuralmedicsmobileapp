@@ -251,4 +251,4 @@ assets/
 
 ## Lisans
 
-Bu proje NeuralMedics eğitim/demonstrasyon amaçlıdır. Tıbbi tanı yerine geçmez; sonuçlar yalnızca bilgilendirme amaçlıdır.
+Bu proje MIT lisans ile lisanslanmıştır.
