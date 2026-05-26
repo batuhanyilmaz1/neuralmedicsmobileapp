@@ -5,6 +5,7 @@ import '../../core/data/health_articles.dart';
 import '../../core/models/health_article.dart';
 import '../../core/router/app_router.dart';
 import '../../core/services/auth_service.dart';
+import '../../core/utils/greeting_name.dart';
 import '../../core/theme/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final name = AuthService.instance.displayName.split(' ').first;
+    final name = greetingFirstName(AuthService.instance.displayName);
 
     return Scaffold(
       body: SafeArea(
