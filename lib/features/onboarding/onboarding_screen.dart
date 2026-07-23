@@ -17,17 +17,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   static const _pages = <_OnboardData>[
     _OnboardData(
-      title: 'AI destekli beyin MR analizi ile erken farkındalık',
+      title: 'Early awareness with AI-powered brain MRI analysis',
       icon: Icons.psychology_rounded,
       color: AppColors.primary,
     ),
     _OnboardData(
-      title: 'Sağlık profilinizi oluşturun, kişiselleştirilmiş karar desteği alın',
+      title: 'Build your health profile and get personalized decision support',
       icon: Icons.monitor_heart_outlined,
       color: AppColors.accent,
     ),
     _OnboardData(
-      title: 'Tarama geçmişiniz cihazınızda güvenle saklanır',
+      title: 'Your scan history is securely stored on your device',
       icon: Icons.security_rounded,
       color: AppColors.primaryDark,
     ),
@@ -65,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: TextButton(
                   onPressed: _skip,
                   child: Text(
-                    'Atla',
+                    'Skip',
                     style: TextStyle(
                       color: AppColors.textSecondary,
                       fontWeight: FontWeight.w600,

@@ -33,7 +33,7 @@ class GoogleSignInButton extends StatelessWidget {
                 _GoogleMark(),
                 const SizedBox(width: 12),
                 const Text(
-                  'Google ile devam et',
+                  'Continue with Google',
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
               ],
@@ -80,7 +80,7 @@ class AuthOrDivider extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'veya',
+              'or',
               style: TextStyle(color: AppColors.textSecondary),
             ),
           ),

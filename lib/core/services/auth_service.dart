@@ -31,7 +31,7 @@ class AuthService {
           ? _profile!.displayName
           : _auth.currentUser?.displayName?.trim().isNotEmpty == true
               ? _auth.currentUser!.displayName!
-              : _auth.currentUser?.email ?? 'Kullanıcı';
+              : _auth.currentUser?.email ?? 'User';
 
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
@@ -61,7 +61,7 @@ class AuthService {
 
     final user = credential.user;
     if (user == null) {
-      throw Exception('Hesap oluşturulamadı.');
+      throw Exception('Account could not be created.');
     }
 
     if (trimmedName.isNotEmpty) {
@@ -85,7 +85,7 @@ class AuthService {
         final account = await GoogleSignIn.instance.authenticate();
         final idToken = account.authentication.idToken;
         if (idToken == null || idToken.isEmpty) {
-          throw Exception('Google oturum açma kimlik belirteci alınamadı.');
+          throw Exception('Could not obtain Google sign-in ID token.');
         }
         credential = await _auth.signInWithCredential(
           GoogleAuthProvider.credential(idToken: idToken),
@@ -94,7 +94,7 @@ class AuthService {
 
       final user = credential.user;
       if (user == null) {
-        throw Exception('Google ile giriş başarısız.');
+        throw Exception('Google sign-in failed.');
       }
 
       _profile = await _users.getProfile(user.uid) ??
@@ -119,7 +119,7 @@ class AuthService {
 
     final user = credential.user;
     if (user == null) {
-      throw Exception('Giriş başarısız.');
+      throw Exception('Sign-in failed.');
     }
 
     _profile = await _users.getProfile(user.uid) ??
@@ -138,7 +138,7 @@ class AuthService {
   }) async {
     final uid = _auth.currentUser?.uid;
     if (uid == null) {
-      throw Exception('Oturum bulunamadı.');
+      throw Exception('No active session found.');
     }
 
     _profile = await _users.updateHealthProfile(
@@ -158,7 +158,7 @@ class AuthService {
     await _auth.sendPasswordResetEmail(email: email.trim());
   }
 
-  /// E-posta/şifre ile kayıtlı hesaplar için true döner.
+  /// Returns true for accounts registered with email/password.
   bool get canResetPassword {
     final user = _auth.currentUser;
     if (user == null) return false;
@@ -168,12 +168,12 @@ class AuthService {
   Future<void> sendPasswordResetToCurrentUser() async {
     final email = _auth.currentUser?.email;
     if (email == null || email.isEmpty) {
-      throw Exception('Hesabınıza bağlı e-posta bulunamadı.');
+      throw Exception('No email address found for your account.');
     }
     if (!canResetPassword) {
       throw Exception(
-        'Bu hesap Google ile giriş yapıyor. Şifre sıfırlama yalnızca '
-        'e-posta/şifre hesapları için geçerlidir.',
+        'This account signs in with Google. Password reset is only '
+        'available for email/password accounts.',
       );
     }
     await sendPasswordResetEmail(email);
@@ -191,34 +191,34 @@ class AuthService {
     if (error is FirebaseAuthException) {
       switch (error.code) {
         case 'invalid-email':
-          return 'Geçerli bir e-posta adresi girin.';
+          return 'Enter a valid email address.';
         case 'user-disabled':
-          return 'Bu hesap devre dışı bırakılmış.';
+          return 'This account has been disabled.';
         case 'user-not-found':
         case 'wrong-password':
         case 'invalid-credential':
-          return 'E-posta veya şifre hatalı.';
+          return 'Incorrect email or password.';
         case 'email-already-in-use':
-          return 'Bu e-posta ile kayıtlı bir hesap zaten var.';
+          return 'An account already exists with this email.';
         case 'weak-password':
-          return 'Şifre en az 6 karakter olmalıdır.';
+          return 'Password must be at least 6 characters.';
         case 'too-many-requests':
-          return 'Çok fazla deneme. Lütfen daha sonra tekrar deneyin.';
+          return 'Too many attempts. Please try again later.';
         case 'account-exists-with-different-credential':
-          return 'Bu e-posta farklı bir giriş yöntemiyle kayıtlı.';
+          return 'This email is registered with a different sign-in method.';
         case 'popup-closed-by-user':
-          return 'Giriş iptal edildi.';
+          return 'Sign-in canceled.';
         default:
-          return error.message ?? 'Kimlik doğrulama başarısız.';
+          return error.message ?? 'Authentication failed.';
       }
     }
     if (error is GoogleSignInException) {
       switch (error.code) {
         case GoogleSignInExceptionCode.canceled:
         case GoogleSignInExceptionCode.interrupted:
-          return 'Giriş iptal edildi.';
+          return 'Sign-in canceled.';
         default:
-          return error.description ?? 'Google ile giriş başarısız.';
+          return error.description ?? 'Google sign-in failed.';
       }
     }
     return error.toString().replaceFirst('Exception: ', '');

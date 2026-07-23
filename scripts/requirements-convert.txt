@@ -1,4 +1,4 @@
-# TensorFlow 2.14 ile eğitilen model için (Colab / local venv):
+# For the model trained with TensorFlow 2.14 (Colab / local venv):
 # python -m venv .venv-convert
 # .venv-convert\Scripts\activate
 # pip install -r scripts/requirements-convert.txt

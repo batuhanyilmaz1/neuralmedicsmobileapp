@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final password = _passwordController.text;
 
     if (name.isEmpty || email.isEmpty || password.isEmpty) {
-      _showError('Tüm alanları doldurun.');
+      _showError('Fill in all fields.');
       return;
     }
 
@@ -82,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
           onPressed: () => context.pop(),
         ),
-        title: const Text('Kayıt Ol'),
+        title: const Text('Sign Up'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -92,20 +92,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
             children: [
               const SizedBox(height: 12),
               AppTextField(
-                hint: 'Adınız',
+                hint: 'Your name',
                 icon: Icons.person_outline_rounded,
                 controller: _nameController,
               ),
               const SizedBox(height: 16),
               AppTextField(
-                hint: 'E-posta adresiniz',
+                hint: 'Your email address',
                 icon: Icons.mail_outline_rounded,
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
               ),
               const SizedBox(height: 16),
               AppTextField(
-                hint: 'Şifreniz (en az 6 karakter)',
+                hint: 'Your password (at least 6 characters)',
                 icon: Icons.lock_outline_rounded,
                 obscure: true,
                 controller: _passwordController,
@@ -127,21 +127,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(
                             color: AppColors.textPrimary, fontSize: 14),
                         children: const [
-                          TextSpan(text: 'NeuralMedics '),
+                          TextSpan(text: 'I agree to NeuralMedics\' '),
                           TextSpan(
-                            text: 'Kullanım Koşulları',
+                            text: 'Terms of Use',
                             style: TextStyle(
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700),
                           ),
-                          TextSpan(text: ' ve '),
+                          TextSpan(text: ' and '),
                           TextSpan(
-                            text: 'Gizlilik Politikası',
+                            text: 'Privacy Policy',
                             style: TextStyle(
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700),
                           ),
-                          TextSpan(text: 'nı kabul ediyorum.'),
+                          TextSpan(text: '.'),
                         ],
                       ),
                     ),
@@ -166,7 +166,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Kayıt Ol'),
+                    : const Text('Sign Up'),
               ),
               const AuthOrDivider(),
               GoogleSignInButton(
@@ -179,12 +179,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Zaten hesabınız var mı? ',
+                  Text('Already have an account? ',
                       style: TextStyle(color: AppColors.textSecondary)),
                   GestureDetector(
                     onTap: () => context.pop(),
                     child: const Text(
-                      'Giriş Yap',
+                      'Sign In',
                       style: TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.w700),

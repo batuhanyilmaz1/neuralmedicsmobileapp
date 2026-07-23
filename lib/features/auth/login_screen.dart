@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final password = _passwordController.text;
 
     if (email.isEmpty || password.isEmpty) {
-      _showError('E-posta ve şifre girin.');
+      _showError('Enter your email and password.');
       return;
     }
 
@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ? context.pop()
               : context.go(AppRoutes.onboarding),
         ),
-        title: const Text('Giriş Yap'),
+        title: const Text('Sign In'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -86,14 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               const SizedBox(height: 12),
               AppTextField(
-                hint: 'E-posta adresiniz',
+                hint: 'Your email address',
                 icon: Icons.mail_outline_rounded,
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
               ),
               const SizedBox(height: 16),
               AppTextField(
-                hint: 'Şifreniz',
+                hint: 'Your password',
                 icon: Icons.lock_outline_rounded,
                 obscure: true,
                 controller: _passwordController,
@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         : AppRoutes.resetPassword;
                     context.push(path);
                   },
-                  child: const Text('Şifremi Unuttum'),
+                  child: const Text('Forgot Password'),
                 ),
               ),
               const SizedBox(height: 8),
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Giriş Yap'),
+                    : const Text('Sign In'),
               ),
               const AuthOrDivider(),
               GoogleSignInButton(
@@ -136,13 +136,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Hesabınız yok mu? ',
+                    "Don't have an account? ",
                     style: TextStyle(color: AppColors.textSecondary),
                   ),
                   GestureDetector(
                     onTap: () => context.push(AppRoutes.signup),
                     child: const Text(
-                      'Kayıt Ol',
+                      'Sign Up',
                       style: TextStyle(
                         color: AppColors.primary,
                         fontWeight: FontWeight.w700,

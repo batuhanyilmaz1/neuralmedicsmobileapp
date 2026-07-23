@@ -3,7 +3,7 @@ import 'package:neuralmedicsmobileapp/core/utils/greeting_name.dart';
 
 void main() {
   test('uses first word of full name', () {
-    expect(greetingFirstName('Ayşe Yılmaz'), 'Ayşe');
+    expect(greetingFirstName('Jane Smith'), 'Jane');
   });
 
   test('uses local part when display name is an email', () {
@@ -11,7 +11,7 @@ void main() {
   });
 
   test('falls back when empty', () {
-    expect(greetingFirstName(''), 'Kullanıcı');
-    expect(greetingFirstName('   '), 'Kullanıcı');
+    expect(greetingFirstName(''), 'User');
+    expect(greetingFirstName('   '), 'User');
   });
 }

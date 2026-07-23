@@ -9,10 +9,10 @@ class MainShell extends StatelessWidget {
   final Widget child;
 
   static const _tabs = <_TabItem>[
-    _TabItem(icon: Icons.home_rounded, label: 'Ana Sayfa', route: AppRoutes.home),
-    _TabItem(icon: Icons.history_rounded, label: 'Geçmiş', route: AppRoutes.history),
-    _TabItem(icon: Icons.menu_book_outlined, label: 'Makaleler', route: AppRoutes.articles),
-    _TabItem(icon: Icons.person_outline_rounded, label: 'Profil', route: AppRoutes.profile),
+    _TabItem(icon: Icons.home_rounded, label: 'Home', route: AppRoutes.home),
+    _TabItem(icon: Icons.history_rounded, label: 'History', route: AppRoutes.history),
+    _TabItem(icon: Icons.menu_book_outlined, label: 'Articles', route: AppRoutes.articles),
+    _TabItem(icon: Icons.person_outline_rounded, label: 'Profile', route: AppRoutes.profile),
   ];
 
   int _currentIndex(BuildContext context) {

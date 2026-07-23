@@ -15,7 +15,7 @@ class TumorClass {
     id: 'glioma',
     label: 'Glioma',
     description:
-        'Glial hücrelerden köken alan tümör. Yüksek dereceli olabilir; uzman görüşü zorunludur.',
+        'A tumor originating from glial cells. It can be high-grade; specialist evaluation is required.',
     isTumor: true,
   );
 
@@ -23,7 +23,7 @@ class TumorClass {
     id: 'meningioma',
     label: 'Meningioma',
     description:
-        'Beyin zarlarından gelişir, çoğunlukla iyi huyludur ancak yerleşimine göre semptom verir.',
+        'Develops from the membranes surrounding the brain, mostly benign but may cause symptoms depending on its location.',
     isTumor: true,
   );
 
@@ -31,7 +31,7 @@ class TumorClass {
     id: 'pituitary',
     label: 'Pituitary',
     description:
-        'Hipofiz bezi kaynaklı tümör. Hormonal dengeyi etkileyebilir, takip gerektirir.',
+        'A tumor originating from the pituitary gland. It may affect hormonal balance and requires follow-up.',
     isTumor: true,
   );
 
@@ -39,7 +39,7 @@ class TumorClass {
     id: 'notumor',
     label: 'No Tumor',
     description:
-        'Görüntüde tümör belirtisi tespit edilmedi. Klinik şüphe sürerse uzmana danışın.',
+        'No signs of a tumor were detected in the image. Consult a specialist if clinical suspicion persists.',
     isTumor: false,
   );
 

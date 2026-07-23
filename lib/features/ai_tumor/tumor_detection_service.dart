@@ -7,11 +7,11 @@ import 'package:tflite_flutter/tflite_flutter.dart';
 
 import 'tumor_prediction.dart';
 
-/// On-device beyin tümör tespit servisi.
+/// On-device brain tumor detection service.
 ///
-/// Model dosyası `assets/ai/brain_tumor.tflite` yoluna konana kadar mock
-/// prediction üretir. Model konduğunda otomatik yüklenir ve gerçek inference
-/// kullanır.
+/// Produces a mock prediction until a model file is placed at
+/// `assets/ai/brain_tumor.tflite`. Once the model is placed, it is loaded
+/// automatically and real inference is used.
 class TumorDetectionService {
   TumorDetectionService._();
   static final TumorDetectionService instance = TumorDetectionService._();

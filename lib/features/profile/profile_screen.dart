@@ -17,10 +17,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   static const _expandedHeight = 318.0;
 
   static const _menu = <_MenuItem>[
-    _MenuItem(Icons.monitor_heart_outlined, 'Sağlık Profilim', AppRoutes.healthProfile),
-    _MenuItem(Icons.history_rounded, 'Tarama Geçmişim', AppRoutes.history),
-    _MenuItem(Icons.menu_book_outlined, 'Sağlık Makaleleri', AppRoutes.articles),
-    _MenuItem(Icons.help_outline_rounded, 'SSS', AppRoutes.faq),
+    _MenuItem(Icons.monitor_heart_outlined, 'My Health Profile', AppRoutes.healthProfile),
+    _MenuItem(Icons.history_rounded, 'My Scan History', AppRoutes.history),
+    _MenuItem(Icons.menu_book_outlined, 'Health Articles', AppRoutes.articles),
+    _MenuItem(Icons.help_outline_rounded, 'FAQ', AppRoutes.faq),
   ];
 
   @override
@@ -68,7 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 IconButton(
                   onPressed: () => context.push(AppRoutes.healthProfile),
                   icon: const Icon(Icons.edit_outlined, color: Colors.white),
-                  tooltip: 'Profili düzenle',
+                  tooltip: 'Edit profile',
                 ),
               ],
               flexibleSpace: LayoutBuilder(
@@ -153,7 +153,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         if (AuthService.instance.canResetPassword)
                           _MenuTile(
                             icon: Icons.lock_reset_rounded,
-                            label: 'Şifre Sıfırla',
+                            label: 'Reset Password',
                             onTap: () {
                               final path = email.isNotEmpty
                                   ? '${AppRoutes.resetPassword}?email=${Uri.encodeComponent(email)}'
@@ -167,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         _MenuTile(
                           icon: Icons.logout_rounded,
-                          label: 'Çıkış Yap',
+                          label: 'Log Out',
                           color: AppColors.danger,
                           onTap: () => _confirmLogout(context),
                         ),
@@ -194,12 +194,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Çıkış Yap',
+              Text('Log Out',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w800)),
               const SizedBox(height: 8),
               Text(
-                'Hesabınızdan çıkmak istediğinize emin misiniz?',
+                'Are you sure you want to log out of your account?',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: AppColors.textSecondary),
               ),
@@ -209,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Expanded(
                     child: OutlinedButton(
                       onPressed: () => Navigator.of(context).pop(),
-                      child: const Text('İptal'),
+                      child: const Text('Cancel'),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -220,7 +220,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         await AuthService.instance.signOut();
                         if (context.mounted) context.go(AppRoutes.login);
                       },
-                      child: const Text('Evet, Çık'),
+                      child: const Text('Yes, Log Out'),
                     ),
                   ),
                 ],
@@ -304,7 +304,7 @@ class _ProfileHeader extends StatelessWidget {
                         child: _Stat(
                           icon: Icons.cake_outlined,
                           value: profile?.ageDisplay ?? '—',
-                          label: 'Yaş',
+                          label: 'Age',
                         ),
                       ),
                       const _StatDivider(),
@@ -312,7 +312,7 @@ class _ProfileHeader extends StatelessWidget {
                         child: _Stat(
                           icon: Icons.height_rounded,
                           value: profile?.heightDisplay ?? '—',
-                          label: 'Boy',
+                          label: 'Height',
                         ),
                       ),
                       const _StatDivider(),
@@ -320,7 +320,7 @@ class _ProfileHeader extends StatelessWidget {
                         child: _Stat(
                           icon: Icons.fitness_center_outlined,
                           value: profile?.weightDisplay ?? '—',
-                          label: 'Kilo',
+                          label: 'Weight',
                         ),
                       ),
                     ],
@@ -355,7 +355,7 @@ class _SetupBanner extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: Text(
-                  'Sağlık profilinizi tamamlayın — AI analizleri için gerekli.',
+                  'Complete your health profile — required for AI analyses.',
                   style: TextStyle(
                     color: AppColors.textPrimary,
                     fontWeight: FontWeight.w600,

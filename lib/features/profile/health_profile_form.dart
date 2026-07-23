@@ -14,7 +14,7 @@ class HealthProfileForm extends StatefulWidget {
     this.initialHeight,
     this.initialCalories,
     this.initialBloodType,
-    this.submitLabel = 'Kaydet',
+    this.submitLabel = 'Save',
     this.showSkip = false,
     this.onSkip,
   });
@@ -43,7 +43,7 @@ class HealthProfileForm extends StatefulWidget {
 }
 
 class _HealthProfileFormState extends State<HealthProfileForm> {
-  static const _genders = ['Erkek', 'Kadın', 'Belirtmek istemiyorum'];
+  static const _genders = ['Male', 'Female', 'Prefer not to say'];
   static const _bloodTypes = [
     'A Rh+',
     'A Rh-',
@@ -108,19 +108,19 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
     final gender = _gender;
 
     if (age == null || age < 1 || age > 120) {
-      _showError('Geçerli bir yaş girin (1–120).');
+      _showError('Enter a valid age (1–120).');
       return;
     }
     if (gender == null || gender.isEmpty) {
-      _showError('Cinsiyet seçin.');
+      _showError('Select a gender.');
       return;
     }
     if (weight == null || weight < 20 || weight > 300) {
-      _showError('Geçerli bir kilo girin (20–300 kg).');
+      _showError('Enter a valid weight (20–300 kg).');
       return;
     }
     if (height == null || height < 80 || height > 250) {
-      _showError('Geçerli bir boy girin (80–250 cm).');
+      _showError('Enter a valid height (80–250 cm).');
       return;
     }
 
@@ -155,7 +155,7 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         AppTextField(
-          hint: 'Yaş',
+          hint: 'Age',
           icon: Icons.cake_outlined,
           keyboardType: TextInputType.number,
           controller: _ageController,
@@ -165,7 +165,7 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
           isExpanded: true,
           value: _gender,
           decoration: InputDecoration(
-            hintText: 'Cinsiyet',
+            hintText: 'Gender',
             prefixIcon: const Icon(Icons.person_outline_rounded),
             prefixIconConstraints:
                 const BoxConstraints(minWidth: 48, minHeight: 24),
@@ -188,21 +188,21 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
         ),
         const SizedBox(height: 16),
         AppTextField(
-          hint: 'Boy (cm)',
+          hint: 'Height (cm)',
           icon: Icons.height_rounded,
           keyboardType: TextInputType.number,
           controller: _heightController,
         ),
         const SizedBox(height: 16),
         AppTextField(
-          hint: 'Kilo (kg)',
+          hint: 'Weight (kg)',
           icon: Icons.monitor_weight_outlined,
           keyboardType: const TextInputType.numberWithOptions(decimal: true),
           controller: _weightController,
         ),
         const SizedBox(height: 16),
         AppTextField(
-          hint: 'Günlük kalori hedefi — isteğe bağlı',
+          hint: 'Daily calorie goal — optional',
           icon: Icons.local_fire_department_outlined,
           keyboardType: TextInputType.number,
           controller: _caloriesController,
@@ -212,7 +212,7 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
           isExpanded: true,
           value: _bloodType,
           decoration: InputDecoration(
-            hintText: 'Kan grubu (isteğe bağlı)',
+            hintText: 'Blood type (optional)',
             prefixIcon: const Icon(Icons.bloodtype_outlined),
             prefixIconConstraints:
                 const BoxConstraints(minWidth: 48, minHeight: 24),
@@ -226,7 +226,7 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
           items: [
             const DropdownMenuItem<String>(
               value: null,
-              child: Text('Seçilmedi', overflow: TextOverflow.ellipsis),
+              child: Text('Not selected', overflow: TextOverflow.ellipsis),
             ),
             ..._bloodTypes.map(
               (b) => DropdownMenuItem(
@@ -255,7 +255,7 @@ class _HealthProfileFormState extends State<HealthProfileForm> {
           const SizedBox(height: 12),
           TextButton(
             onPressed: _loading ? null : widget.onSkip,
-            child: const Text('Şimdilik atla'),
+            child: const Text('Skip for now'),
           ),
         ],
       ],

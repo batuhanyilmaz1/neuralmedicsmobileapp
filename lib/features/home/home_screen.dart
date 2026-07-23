@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Merhaba, $name 👋',
+                'Hello, $name 👋',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w800,
                       height: 1.2,
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'AI destekli beyin MR karar destek sisteminiz',
+                'Your AI-powered brain MRI decision support system',
                 style: TextStyle(color: AppColors.textSecondary),
               ),
               const SizedBox(height: 24),
@@ -40,23 +40,23 @@ class HomeScreen extends StatelessWidget {
                 items: [
                   _CategoryItem(
                     icon: Icons.psychology_outlined,
-                    label: 'AI Tarama',
+                    label: 'AI Scan',
                     onTap: () => context.push(AppRoutes.aiTumor),
                     highlight: true,
                   ),
                   _CategoryItem(
                     icon: Icons.history_rounded,
-                    label: 'Geçmiş',
+                    label: 'History',
                     onTap: () => context.go(AppRoutes.history),
                   ),
                   _CategoryItem(
                     icon: Icons.menu_book_outlined,
-                    label: 'Makaleler',
+                    label: 'Articles',
                     onTap: () => context.go(AppRoutes.articles),
                   ),
                   _CategoryItem(
                     icon: Icons.monitor_heart_outlined,
-                    label: 'Profilim',
+                    label: 'My Profile',
                     onTap: () => context.go(AppRoutes.profile),
                   ),
                 ],
@@ -71,14 +71,14 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Sağlık Makaleleri',
+                  Text('Health Articles',
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium
                           ?.copyWith(fontWeight: FontWeight.w800)),
                   TextButton(
                     onPressed: () => context.go(AppRoutes.articles),
-                    child: const Text('Tümünü gör'),
+                    child: const Text('See all'),
                   ),
                 ],
               ),
@@ -186,7 +186,7 @@ class _PromoCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Erken farkındalık,\n daha bilinçli kararlar',
+                  'Early awareness,\n more informed decisions',
                   style: TextStyle(
                     color: AppColors.textPrimary,
                     fontSize: 16,
@@ -202,7 +202,7 @@ class _PromoCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 8),
                   ),
-                  child: const Text('Daha fazla bilgi',
+                  child: const Text('Learn more',
                       style: TextStyle(fontSize: 13)),
                 ),
               ],
@@ -270,7 +270,7 @@ class _ArticleCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${article.category} • ${article.readMinutes} dk okuma',
+                    '${article.category} • ${article.readMinutes} min read',
                     style: TextStyle(
                       color: AppColors.textTertiary,
                       fontSize: 12,

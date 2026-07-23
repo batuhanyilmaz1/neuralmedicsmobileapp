@@ -24,7 +24,7 @@ class UserFirestoreService {
   }) async {
     final email = user.email;
     if (email == null || email.isEmpty) {
-      throw Exception('Oturum açmış kullanıcının e-posta adresi yok.');
+      throw Exception('The signed-in user has no email address.');
     }
 
     final ref = _users.doc(user.uid);
@@ -67,7 +67,7 @@ class UserFirestoreService {
     final ref = _users.doc(uid);
     final existing = await ref.get();
     if (!existing.exists) {
-      throw Exception('Kullanıcı profili bulunamadı.');
+      throw Exception('User profile not found.');
     }
 
     await ref.set(

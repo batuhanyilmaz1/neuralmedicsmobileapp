@@ -1,8 +1,8 @@
 # AI Model — `brain_tumor.tflite`
 
-**Durum:** `Unet-BrainTumor.h5` dosyasından dönüştürüldü (~157 MB). Model TensorFlow **2.14** ile eğitildi.
+**Status:** Converted from `Unet-BrainTumor.h5` (~157 MB). The model was trained with TensorFlow **2.14**.
 
-Yeniden üretmek için:
+To regenerate:
 
 ```powershell
 python -m venv .venv-convert
@@ -13,6 +13,6 @@ python -m venv .venv-convert
 ## Spec
 
 - Input: `[1, 256, 256, 3]` float32, RGB 0–1
-- Output: `[1, 4]` softmax — sınıf sırası `lib/features/ai_tumor/tumor_prediction.dart` içinde
+- Output: `[1, 4]` softmax — class order is in `lib/features/ai_tumor/tumor_prediction.dart`
 
-Model dosyası yoksa uygulama **DEMO** modunda çalışır.
+If the model file is missing, the app runs in **DEMO** mode.

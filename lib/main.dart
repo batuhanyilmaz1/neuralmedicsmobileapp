@@ -21,7 +21,7 @@ Future<void> main() async {
       serverClientId: GoogleSignInConfig.serverClientId,
     );
   }
-  await initializeDateFormatting('tr_TR', null);
+  await initializeDateFormatting('en_US', null);
   await PredictionDatabase.instance.init();
 
   SystemChrome.setSystemUIOverlayStyle(
@@ -41,7 +41,7 @@ class NeuralMedicsApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'NeuralMedics',
       debugShowCheckedModeBanner: false,
-      locale: const Locale('tr', 'TR'),
+      locale: const Locale('en', 'US'),
       theme: AppTheme.light,
       routerConfig: appRouter,
     );

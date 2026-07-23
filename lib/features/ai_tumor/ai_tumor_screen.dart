@@ -76,7 +76,7 @@ class _AiTumorScreenState extends State<AiTumorScreen> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
           onPressed: () => context.pop(),
         ),
-        title: const Text('AI Beyin Tümörü Tarama'),
+        title: const Text('AI Brain Tumor Scan'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -96,7 +96,7 @@ class _AiTumorScreenState extends State<AiTumorScreen> {
                           ? null
                           : () => _pick(ImageSource.gallery),
                       icon: const Icon(Icons.photo_library_outlined),
-                      label: const Text('Galeriden'),
+                      label: const Text('From Gallery'),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -106,7 +106,7 @@ class _AiTumorScreenState extends State<AiTumorScreen> {
                           ? null
                           : () => _pick(ImageSource.camera),
                       icon: const Icon(Icons.photo_camera_outlined),
-                      label: const Text('Kamera'),
+                      label: const Text('Camera'),
                     ),
                   ),
                 ],
@@ -124,7 +124,7 @@ class _AiTumorScreenState extends State<AiTumorScreen> {
                         ),
                       )
                     : const Icon(Icons.auto_awesome_rounded),
-                label: Text(_analyzing ? 'Analiz Ediliyor...' : 'Analiz Et'),
+                label: Text(_analyzing ? 'Analyzing...' : 'Analyze'),
                 style: ElevatedButton.styleFrom(
                   disabledBackgroundColor:
                       AppColors.primary.withValues(alpha: 0.4),
@@ -170,7 +170,7 @@ class _AiHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'AI Tarama',
+                  'AI Scan',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
@@ -179,7 +179,7 @@ class _AiHeader extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'MR görseli yükleyin, AI ön analiz yapsın.',
+                  'Upload an MRI image and let AI do a preliminary analysis.',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 13,
@@ -220,7 +220,7 @@ class _ImagePreview extends StatelessWidget {
                         size: 64, color: AppColors.textTertiary),
                     const SizedBox(height: 12),
                     Text(
-                      'MR / CT görseli yükleyin',
+                      'Upload an MRI / CT image',
                       style:
                           TextStyle(color: AppColors.textSecondary),
                     ),
@@ -241,7 +241,7 @@ class _ImagePreview extends StatelessWidget {
                             CircularProgressIndicator(color: Colors.white),
                             SizedBox(height: 12),
                             Text(
-                              'Analiz ediliyor...',
+                              'Analyzing...',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -308,7 +308,7 @@ class _ResultCard extends StatelessWidget {
                             fontSize: 18)),
                     const SizedBox(height: 2),
                     Text(
-                      '${(result.confidence * 100).toStringAsFixed(1)}% güven · ${result.inferenceMs} ms',
+                      '${(result.confidence * 100).toStringAsFixed(1)}% confidence · ${result.inferenceMs} ms',
                       style: TextStyle(
                           color: AppColors.textSecondary,
                           fontSize: 12),
@@ -344,7 +344,7 @@ class _ResultCard extends StatelessWidget {
           const SizedBox(height: 16),
           const Divider(),
           const SizedBox(height: 8),
-          Text('Tüm sınıflar',
+          Text('All classes',
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -437,7 +437,7 @@ class _DisclaimerCard extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: Text(
-              'Bu sonuçlar tıbbi tanı yerine geçmez. Klinik karar için bir uzman radyolog veya nöroloğa başvurun.',
+              'These results are not a substitute for a medical diagnosis. Consult a specialist radiologist or neurologist for clinical decisions.',
               style: TextStyle(
                 color: AppColors.textPrimary,
                 height: 1.4,

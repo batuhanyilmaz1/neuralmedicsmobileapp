@@ -8,41 +8,41 @@ class FaqScreen extends StatelessWidget {
 
   static const _items = [
     _FaqItem(
-      question: 'NeuralMedics nedir?',
+      question: 'What is NeuralMedics?',
       answer:
-          'NeuralMedics, beyin MR görüntülerinde yapay zeka destekli ön analiz sunan '
-          'bir karar destek sistemidir. Tanı koymaz; hekiminize ek bilgi sağlar.',
+          'NeuralMedics is a decision support system that offers AI-assisted '
+          'preliminary analysis of brain MRI images. It does not provide a diagnosis; it gives your doctor extra information.',
     ),
     _FaqItem(
-      question: 'Sonuçlar ne kadar güvenilir?',
+      question: 'How reliable are the results?',
       answer:
-          'Model eğitim verisine bağlı olarak değişir. Yanlış pozitif veya negatif '
-          'sonuçlar mümkündür. Nihai değerlendirme mutlaka uzman hekim tarafından yapılmalıdır.',
+          'This depends on the model\'s training data. False positive or negative '
+          'results are possible. The final evaluation must always be made by a qualified physician.',
     ),
     _FaqItem(
-      question: 'Verilerim nerede saklanır?',
+      question: 'Where is my data stored?',
       answer:
-          'Profil bilgileriniz Firebase Firestore\'da, tarama geçmişiniz ise yalnızca '
-          'cihazınızdaki yerel veritabanında saklanır.',
+          'Your profile information is stored in Firebase Firestore, while your '
+          'scan history is stored only in the local database on your device.',
     ),
     _FaqItem(
-      question: 'Sağlık profilim neden gerekli?',
+      question: 'Why is my health profile needed?',
       answer:
-          'Yaş, boy, kilo gibi bilgiler analiz bağlamını zenginleştirir ve profil '
-          'ekranınızdaki sağlık göstergelerini kişiselleştirir.',
+          'Information such as age, height, and weight enriches the analysis context and '
+          'personalizes the health indicators on your profile screen.',
     ),
     _FaqItem(
-      question: 'DEMO etiketi ne anlama geliyor?',
+      question: 'What does the DEMO label mean?',
       answer:
-          'AI model dosyası cihazda yüklü değilse sistem demo modunda çalışır. '
-          'Gerçek model entegrasyonu için assets/ai/brain_tumor.tflite dosyası gerekir.',
+          'If the AI model file is not installed on the device, the system runs in demo mode. '
+          'For real model integration, the assets/ai/brain_tumor.tflite file is required.',
     ),
     _FaqItem(
-      question: 'Şifremi nasıl sıfırlarım?',
+      question: 'How do I reset my password?',
       answer:
-          'Giriş ekranındaki "Şifremi Unuttum" bağlantısını veya profildeki '
-          '"Şifre Sıfırla" seçeneğini kullanın. E-posta adresinize sıfırlama '
-          'bağlantısı gönderilir.',
+          'Use the "Forgot Password" link on the login screen or the '
+          '"Reset Password" option in your profile. A reset '
+          'link will be sent to your email address.',
     ),
   ];
 
@@ -54,7 +54,7 @@ class FaqScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
           onPressed: () => context.pop(),
         ),
-        title: const Text('Sıkça Sorulan Sorular'),
+        title: const Text('Frequently Asked Questions'),
       ),
       body: ListView.separated(
         padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),

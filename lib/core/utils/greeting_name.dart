@@ -1,7 +1,7 @@
 /// Returns a short, friendly name for greetings (e.g. home header).
 String greetingFirstName(String displayName) {
   final source = displayName.trim();
-  if (source.isEmpty) return 'Kullanıcı';
+  if (source.isEmpty) return 'User';
   if (source.contains('@')) {
     return source.split('@').first;
   }

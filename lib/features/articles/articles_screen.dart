@@ -13,7 +13,7 @@ class ArticlesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sağlık Makaleleri'),
+        title: const Text('Health Articles'),
         automaticallyImplyLeading: false,
       ),
       body: ListView.separated(
@@ -77,7 +77,7 @@ class _ArticleTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${article.category} • ${article.readMinutes} dk okuma',
+                    '${article.category} • ${article.readMinutes} min read',
                     style: TextStyle(
                       color: AppColors.textTertiary,
                       fontSize: 12,

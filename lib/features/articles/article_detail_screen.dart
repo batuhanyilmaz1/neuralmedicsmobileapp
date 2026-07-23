@@ -19,9 +19,9 @@ class ArticleDetailScreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
             onPressed: () => context.pop(),
           ),
-          title: const Text('Makale'),
+          title: const Text('Article'),
         ),
-        body: const Center(child: Text('Makale bulunamadı.')),
+        body: const Center(child: Text('Article not found.')),
       );
     }
 
@@ -57,7 +57,7 @@ class ArticleDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              '${article.category} • ${article.readMinutes} dk okuma',
+              '${article.category} • ${article.readMinutes} min read',
               style: TextStyle(color: AppColors.textSecondary),
             ),
             const SizedBox(height: 16),
@@ -100,8 +100,8 @@ class ArticleDetailScreen extends StatelessWidget {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      'Bu içerik bilgilendirme amaçlıdır; tıbbi tanı veya tedavi '
-                      'önerisi değildir. Sağlık sorunlarınız için hekiminize danışın.',
+                      'This content is for informational purposes only; it is not '
+                      'medical diagnosis or treatment advice. Consult your doctor for any health concerns.',
                       style: TextStyle(
                         color: AppColors.textPrimary,
                         height: 1.45,

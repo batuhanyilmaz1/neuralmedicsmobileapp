@@ -16,30 +16,30 @@
   
 # NeuralMedics
 
-Flutter ile geliştirilmiş, yapay zeka destekli beyin MR tümör sınıflandırma uygulaması.  
-Firebase Auth + Firestore, yerel SQLite geçmişi ve TFLite on-device inference kullanır.
+An AI-powered brain MRI tumor classification app built with Flutter.  
+Uses Firebase Auth + Firestore, a local SQLite history, and on-device TFLite inference.
 
-**Firebase projesi:** `neuralmedicsmobileapp`  
-**Dil:** Türkçe arayüz  
+**Firebase project:** `neuralmedicsmobileapp`  
+**Language:** English UI  
 </div>
 
 ---
 
-## Ekran görüntüleri
+## Screenshots
 
-| Ana Sayfa | AI Tarama |
+| Home | AI Scan |
 |:---:|:---:|
-| ![Ana Sayfa](docs/screenshots/home.png) | ![AI Tarama](docs/screenshots/ai-scan.png) |
+| ![Home](docs/screenshots/home.png) | ![AI Scan](docs/screenshots/ai-scan.png) |
 
-| Sağlık Makaleleri | Profil |
+| Health Articles | Profile |
 |:---:|:---:|
-| ![Makaleler](docs/screenshots/articles.png) | ![Profil](docs/screenshots/profile.png) |
+| ![Articles](docs/screenshots/articles.png) | ![Profile](docs/screenshots/profile.png) |
 
 ---
 
-## Hızlı başlangıç
+## Quick start
 
-Projeyi ilk kez veya uzun aradan sonra açtığında:
+When opening the project for the first time or after a long break:
 
 ```powershell
 cd neuralmedicsmobileapp
@@ -47,7 +47,7 @@ flutter pub get
 flutter run
 ```
 
-Model dosyası eklendiyse veya değiştiyse tam yeniden derleme:
+Full rebuild if the model file was added or changed:
 
 ```powershell
 flutter clean
@@ -55,7 +55,7 @@ flutter pub get
 flutter run
 ```
 
-Cihaz listesi:
+List devices:
 
 ```powershell
 flutter devices
@@ -64,15 +64,15 @@ flutter run -d <device_id>
 
 ---
 
-## Gereksinimler
+## Requirements
 
-| Araç | Not |
+| Tool | Note |
 |------|-----|
-| [Flutter SDK](https://docs.flutter.dev/get-started/install) | Dart `^3.12` (pubspec ile uyumlu) |
-| Android Studio / Xcode | Android veya iOS emülatör/cihaz |
-| Firebase CLI (isteğe bağlı) | Auth / Firestore deploy için |
+| [Flutter SDK](https://docs.flutter.dev/get-started/install) | Dart `^3.12` (compatible with pubspec) |
+| Android Studio / Xcode | Android or iOS emulator/device |
+| Firebase CLI (optional) | For Auth / Firestore deploy |
 
-Kontrol:
+Check:
 
 ```powershell
 flutter doctor
@@ -81,34 +81,34 @@ flutter --version
 
 ---
 
-## Özellikler
+## Features
 
-- **Kimlik doğrulama:** E-posta/şifre, Google Sign-In, şifre sıfırlama
-- **Sağlık profili:** Yaş, cinsiyet, boy, kilo, kan grubu (Firestore `users/{uid}`)
-- **AI tarama:** MR görüntüsü yükle → TFLite ile 4 sınıf tahmini
-- **Tarama geçmişi:** Yerel SQLite (`sqflite`)
-- **Makaleler & SSS:** Uygulama içi sağlık içerikleri
+- **Authentication:** Email/password, Google Sign-In, password reset
+- **Health profile:** Age, gender, height, weight, blood type (Firestore `users/{uid}`)
+- **AI scan:** Upload an MRI image → 4-class prediction with TFLite
+- **Scan history:** Local SQLite (`sqflite`)
+- **Articles & FAQ:** In-app health content
 
-Alt menü: **Ana Sayfa · Geçmiş · Makaleler · Profil**
+Bottom navigation: **Home · History · Articles · Profile**
 
 ---
 
-## AI modeli
+## AI model
 
-| Dosya | Boyut | Açıklama |
+| File | Size | Description |
 |-------|-------|----------|
-| `assets/ai/brain_tumor.tflite` | ~157 MB | Cihazda çalışan model |
-| `ai_figma/Unet-BrainTumor.h5` | ~473 MB | Kaynak Keras modeli (TF 2.14 ile eğitildi) |
+| `assets/ai/brain_tumor.tflite` | ~157 MB | On-device model |
+| `ai_figma/Unet-BrainTumor.h5` | ~473 MB | Source Keras model (trained with TF 2.14) |
 
-**Girdi:** `[1, 256, 256, 3]` float32, RGB 0–1  
-**Çıktı:** `[1, 4]` softmax — sıra: Glioma, Meningioma, No Tumor, Pituitary  
-**Servis:** `lib/features/ai_tumor/tumor_detection_service.dart`
+**Input:** `[1, 256, 256, 3]` float32, RGB 0–1  
+**Output:** `[1, 4]` softmax — order: Glioma, Meningioma, No Tumor, Pituitary  
+**Service:** `lib/features/ai_tumor/tumor_detection_service.dart`
 
-Model dosyaları **Git LFS** ile repoda tutulur (`.gitattributes`). Clone sonrası `git lfs pull` gerekir.
+Model files are tracked in the repo with **Git LFS** (`.gitattributes`). Run `git lfs pull` after cloning.
 
-Model yoksa uygulama **DEMO** modunda mock tahmin üretir.
+If the model is missing, the app produces mock predictions in **DEMO** mode.
 
-### H5 → TFLite yeniden dönüştürme
+### H5 → TFLite reconversion
 
 ```powershell
 python -m venv .venv-convert
@@ -116,15 +116,15 @@ python -m venv .venv-convert
 .\.venv-convert\Scripts\python.exe scripts\convert_h5_to_tflite.py
 ```
 
-Detay: `assets/ai/README.md` · Script: `scripts/convert_h5_to_tflite.py`
+Details: `assets/ai/README.md` · Script: `scripts/convert_h5_to_tflite.py`
 
 ---
 
-## Firebase yapılandırması
+## Firebase configuration
 
-Projede hazır config dosyaları:
+Config files already included in the project:
 
-| Platform | Dosya |
+| Platform | File |
 |----------|-------|
 | Android | `android/app/google-services.json` |
 | iOS | `ios/Runner/GoogleService-Info.plist` |
@@ -132,7 +132,7 @@ Projede hazır config dosyaları:
 
 Google Sign-In web client ID: `lib/core/config/google_sign_in_config.dart`
 
-### Auth & Firestore deploy (isteğe bağlı)
+### Auth & Firestore deploy (optional)
 
 ```powershell
 npx -y firebase-tools@latest login
@@ -140,9 +140,9 @@ npx -y firebase-tools@latest use neuralmedicsmobileapp
 npx -y firebase-tools@latest deploy --only auth,firestore:rules
 ```
 
-**Not:** Android Google Sign-In için Firebase Console’da SHA-1 / SHA-256 parmak izleri kayıtlı olmalı.
+**Note:** For Android Google Sign-In, SHA-1 / SHA-256 fingerprints must be registered in the Firebase Console.
 
-Debug keystore SHA almak için:
+To get the debug keystore SHA:
 
 ```powershell
 keytool -list -v -keystore "$env:USERPROFILE\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
@@ -152,14 +152,14 @@ keytool -list -v -keystore "$env:USERPROFILE\.android\debug.keystore" -alias and
 
 ## Git & Git LFS (push)
 
-Büyük model dosyaları normal git ile push edilemez (GitHub 100 MB limiti). Projede Git LFS yapılandırıldı:
+Large model files can't be pushed with plain git (GitHub's 100 MB limit). Git LFS is configured in the project:
 
-| Dosya | Boyut | LFS |
+| File | Size | LFS |
 |-------|-------|-----|
-| `assets/ai/brain_tumor.tflite` | ~157 MB | Evet |
-| `ai_figma/Unet-BrainTumor.h5` | ~473 MB | Evet |
+| `assets/ai/brain_tumor.tflite` | ~157 MB | Yes |
+| `ai_figma/Unet-BrainTumor.h5` | ~473 MB | Yes |
 
-### İlk push
+### First push
 
 ```powershell
 cd neuralmedicsmobileapp
@@ -169,13 +169,13 @@ git add .gitattributes
 git add .
 git commit -m "NeuralMedics: Flutter AI brain tumor app"
 git branch -M main
-git remote add origin https://github.com/<kullanici>/<repo>.git
+git remote add origin https://github.com/<username>/<repo>.git
 git push -u origin main
 ```
 
-GitHub’da repo oluştururken **Git LFS**’in açık olduğundan emin ol (varsayılan açık).
+When creating the repo on GitHub, make sure **Git LFS** is enabled (on by default).
 
-### Clone (başka makinede)
+### Clone (on another machine)
 
 ```powershell
 git clone https://github.com/batuhanyilmaz1/neuralmedicsmobileapp.git
@@ -185,7 +185,7 @@ flutter pub get
 flutter run
 ```
 
-LFS dosyalarının takip edildiğini doğrulamak için:
+To verify LFS files are tracked:
 
 ```powershell
 git lfs ls-files
@@ -193,7 +193,7 @@ git lfs ls-files
 
 ---
 
-## Test ve analiz
+## Test & analysis
 
 ```powershell
 flutter analyze
@@ -208,26 +208,26 @@ flutter build apk --release
 
 ---
 
-## Proje yapısı
+## Project structure
 
 ```
 lib/
-├── main.dart                 # Firebase, Google Sign-In, router başlatma
+├── main.dart                 # Firebase, Google Sign-In, router setup
 ├── firebase_options.dart
 ├── core/
 │   ├── router/               # go_router + auth guard
-│   ├── services/             # Auth, Firestore, tahmin repo
-│   ├── database/             # SQLite tarama geçmişi
+│   ├── services/             # Auth, Firestore, prediction repo
+│   ├── database/             # SQLite scan history
 │   ├── models/               # UserProfile, PredictionRecord
 │   └── theme/
 └── features/
-    ├── auth/                 # Giriş, kayıt, şifre sıfırlama
-    ├── ai_tumor/             # MR tarama + TFLite
-    ├── profile/              # Profil & sağlık formu
-    ├── home/                 # Ana sayfa
-    ├── history/              # Tarama geçmişi
-    ├── articles/             # Sağlık makaleleri
-    └── faq/                  # SSS
+    ├── auth/                 # Login, register, password reset
+    ├── ai_tumor/             # MRI scan + TFLite
+    ├── profile/              # Profile & health form
+    ├── home/                 # Home screen
+    ├── history/              # Scan history
+    ├── articles/             # Health articles
+    └── faq/                  # FAQ
 
 assets/
 ├── ai/                       # brain_tumor.tflite
@@ -237,18 +237,18 @@ assets/
 
 ---
 
-## Sık karşılaşılan sorunlar
+## Common issues
 
-| Sorun | Çözüm |
+| Issue | Fix |
 |-------|--------|
-| `CONFIGURATION_NOT_FOUND` (kayıt) | Firebase Auth’ta E-posta/Parola açık mı kontrol et; SHA parmak izlerini ekle |
-| Google giriş çalışmıyor | `google-services.json` + SHA-1/256 + `serverClientId` doğrula |
-| Model yüklenmiyor / DEMO modu | `assets/ai/brain_tumor.tflite` var mı; `flutter clean && flutter run` |
-| Büyük model APK boyutu | Normal (~157 MB); ileride quantize edilebilir |
-| Profil kaydı sonrası yönlendirme | Sağlık profili tamamlanmamışsa `/profile-setup` açılır |
+| `CONFIGURATION_NOT_FOUND` (sign-up) | Check that Email/Password is enabled in Firebase Auth; add SHA fingerprints |
+| Google sign-in not working | Verify `google-services.json` + SHA-1/256 + `serverClientId` |
+| Model not loading / DEMO mode | Check `assets/ai/brain_tumor.tflite` exists; `flutter clean && flutter run` |
+| Large model APK size | Expected (~157 MB); can be quantized later |
+| Redirect after profile save | `/profile-setup` opens if the health profile isn't completed |
 
 ---
 
-## Lisans
+## License
 
-Bu proje MIT lisans ile lisanslanmıştır.
+This project is licensed under the MIT License.

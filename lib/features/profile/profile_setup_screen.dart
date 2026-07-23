@@ -14,7 +14,7 @@ class ProfileSetupScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Sağlık Profili'),
+        title: const Text('Health Profile'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -32,16 +32,16 @@ class ProfileSetupScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Profilinizi tamamlayın',
+                      'Complete your profile',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w800,
                           ),
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Yaş, boy, kilo ve diğer sağlık bilgileriniz AI analizlerinde '
-                      'daha anlamlı sonuçlar için kullanılır. Verileriniz yalnızca '
-                      'sizin hesabınızda saklanır.',
+                      'Your age, height, weight, and other health information are '
+                      'used to give more meaningful results in AI analyses. Your '
+                      'data is stored only in your own account.',
                       style: TextStyle(
                         color: AppColors.textSecondary,
                         height: 1.45,
@@ -52,7 +52,7 @@ class ProfileSetupScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               HealthProfileForm(
-                submitLabel: 'Profili Kaydet ve Devam Et',
+                submitLabel: 'Save Profile and Continue',
                 onSubmit: ({
                   required age,
                   required gender,

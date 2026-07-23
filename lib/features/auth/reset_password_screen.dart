@@ -34,7 +34,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   Future<void> _sendReset() async {
     final email = _emailController.text.trim();
     if (email.isEmpty) {
-      _showError('E-posta adresinizi girin.');
+      _showError('Enter your email address.');
       return;
     }
 
@@ -71,15 +71,15 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   size: 48, color: AppColors.primary),
               const SizedBox(height: 16),
               Text(
-                'E-postanızı kontrol edin',
+                'Check your email',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
               ),
               const SizedBox(height: 8),
               Text(
-                '$email adresine şifre sıfırlama bağlantısı gönderildi. '
-                'Gelen kutunuzu ve spam klasörünü kontrol edin.',
+                'A password reset link has been sent to $email. '
+                'Check your inbox and spam folder.',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: AppColors.textSecondary, height: 1.45),
               ),
@@ -95,7 +95,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       context.go(AppRoutes.login);
                     }
                   },
-                  child: const Text('Tamam'),
+                  child: const Text('OK'),
                 ),
               ),
             ],
@@ -115,7 +115,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
           onPressed: () => context.pop(),
         ),
-        title: const Text('Şifre Sıfırla'),
+        title: const Text('Reset Password'),
       ),
       body: SafeArea(
         child: Padding(
@@ -125,13 +125,13 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
             children: [
               Text(
                 fromProfile
-                    ? 'Hesabınıza bağlı e-posta adresine şifre sıfırlama bağlantısı gönderilecek.'
-                    : 'E-posta adresinizi girin, size şifre sıfırlama bağlantısı gönderelim.',
+                    ? 'A password reset link will be sent to the email address linked to your account.'
+                    : 'Enter your email address and we\'ll send you a password reset link.',
                 style: TextStyle(color: AppColors.textSecondary, height: 1.4),
               ),
               const SizedBox(height: 24),
               AppTextField(
-                hint: 'E-posta adresiniz',
+                hint: 'Your email address',
                 icon: Icons.mail_outline_rounded,
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
@@ -149,7 +149,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Sıfırlama Bağlantısı Gönder'),
+                    : const Text('Send Reset Link'),
               ),
             ],
           ),

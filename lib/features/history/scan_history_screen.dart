@@ -42,7 +42,7 @@ class _ScanHistoryScreenState extends State<ScanHistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tarama Geçmişi'),
+        title: const Text('Scan History'),
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
@@ -64,7 +64,7 @@ class _ScanHistoryScreenState extends State<ScanHistoryScreen> {
                             size: 64, color: AppColors.textTertiary),
                         const SizedBox(height: 16),
                         Text(
-                          'Henüz tarama geçmişiniz yok',
+                          'No scan history yet',
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium
@@ -72,7 +72,7 @@ class _ScanHistoryScreenState extends State<ScanHistoryScreen> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'AI tarama yaptığınızda sonuçlar burada listelenir.',
+                          'Results will be listed here once you run an AI scan.',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: AppColors.textSecondary),
                         ),
@@ -100,7 +100,7 @@ class _HistoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final date = DateFormat('d MMM yyyy, HH:mm', 'tr_TR').format(record.createdAt);
+    final date = DateFormat('d MMM yyyy, HH:mm', 'en_US').format(record.createdAt);
     final confidence = (record.confidence * 100).toStringAsFixed(1);
 
     return Container(
@@ -136,7 +136,7 @@ class _HistoryTile extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '$confidence% güven • ${record.inferenceMs} ms',
+                  '$confidence% confidence • ${record.inferenceMs} ms',
                   style: TextStyle(
                     color: AppColors.textSecondary,
                     fontSize: 12,

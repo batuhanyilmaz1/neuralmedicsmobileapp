@@ -37,7 +37,7 @@ class _HealthProfileScreenState extends State<HealthProfileScreen> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
           onPressed: () => context.pop(),
         ),
-        title: const Text('Sağlık Profilim'),
+        title: const Text('My Health Profile'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -60,7 +60,7 @@ class _HealthProfileScreenState extends State<HealthProfileScreen> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'VKİ: ${bmi.toStringAsFixed(1)} kg/m²',
+                          'BMI: ${bmi.toStringAsFixed(1)} kg/m²',
                           style: const TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ),
@@ -68,7 +68,7 @@ class _HealthProfileScreenState extends State<HealthProfileScreen> {
                   ),
                 ),
               HealthProfileForm(
-                submitLabel: 'Güncelle',
+                submitLabel: 'Update',
                 initialAge: profile?.age,
                 initialGender: profile?.gender,
                 initialWeight: profile?.weightKg,
@@ -94,7 +94,7 @@ class _HealthProfileScreenState extends State<HealthProfileScreen> {
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        content: Text('Sağlık profiliniz güncellendi.'),
+                        content: Text('Your health profile has been updated.'),
                         backgroundColor: AppColors.success,
                       ),
                     );

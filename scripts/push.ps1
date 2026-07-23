@@ -1,8 +1,8 @@
-# NeuralMedics — ilk push veya güncelleme
-# Kullanım:
-#   .\scripts\push.ps1 -Remote "https://github.com/kullanici/neuralmedicsmobileapp.git"
-# veya:
-#   $env:GITHUB_REMOTE = "https://github.com/kullanici/neuralmedicsmobileapp.git"
+# NeuralMedics — first push or update
+# Usage:
+#   .\scripts\push.ps1 -Remote "https://github.com/username/neuralmedicsmobileapp.git"
+# or:
+#   $env:GITHUB_REMOTE = "https://github.com/username/neuralmedicsmobileapp.git"
 #   .\scripts\push.ps1
 
 param(
@@ -15,7 +15,7 @@ $ErrorActionPreference = "Stop"
 Set-Location (Split-Path $PSScriptRoot -Parent)
 
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    throw "git bulunamadi."
+    throw "git not found."
 }
 
 git lfs install --local | Out-Null
@@ -27,12 +27,12 @@ if (-not $Remote -and $currentRemote) {
 
 if (-not $Remote) {
     throw @"
-GitHub remote URL gerekli.
+GitHub remote URL required.
 
-Ornek:
-  .\scripts\push.ps1 -Remote "https://github.com/KULLANICI/neuralmedicsmobileapp.git"
+Example:
+  .\scripts\push.ps1 -Remote "https://github.com/USERNAME/neuralmedicsmobileapp.git"
 
-Once GitHub'da bos repo olustur (README ekleme).
+First create an empty repo on GitHub (do not add a README).
 "@
 }
 
@@ -47,10 +47,10 @@ $status = git status --porcelain
 if ($status) {
     git commit -m $Message
 } else {
-    Write-Host "Commit edilecek degisiklik yok."
+    Write-Host "No changes to commit."
 }
 
 git branch -M $Branch
-Write-Host "Push basliyor (LFS dosyalari dahil, biraz surebilir)..."
+Write-Host "Starting push (including LFS files, this may take a while)..."
 git push -u origin $Branch
-Write-Host "Tamam: $Remote ($Branch)"
+Write-Host "Done: $Remote ($Branch)"

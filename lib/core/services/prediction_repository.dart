@@ -16,7 +16,7 @@ class PredictionRepository {
   }) async {
     final uid = FirebaseAuth.instance.currentUser?.uid;
     if (uid == null) {
-      throw Exception('Tahmin kaydetmek için oturum açmalısınız.');
+      throw Exception('You must be signed in to save a prediction.');
     }
 
     final probs = <String, double>{};
